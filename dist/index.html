@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue.js 圓形倒數</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <div id="countdown">
+    <svg 
+         :width="size" 
+         :height="size">
+      <circle 
+              fill="transparent" 
+              :stroke-width="stroke" 
+              stroke="#eee" 
+              :r="radius" 
+              :cx="circleOffset" 
+              :cy="circleOffset">
+      </circle>
+      <circle 
+              class="circle" 
+              fill="transparent" 
+              :stroke-width="stroke"  
+              stroke="#000" 
+              :r="radius" 
+              :cx="circleOffset" 
+              :cy="circleOffset" 
+              :stroke-dasharray="circumference" 
+              :stroke-dashoffset="progress"
+              stroke-linecap="round">
+      </circle>
+    </svg>
+    <span>{{ countdown }}</span>
+  </div>
+  <button @click="animate">Animate!</button>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
